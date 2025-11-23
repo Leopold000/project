@@ -16,7 +16,7 @@
         <div class="layout_tabbar">3245</div>
         <!-- 内容展示区 -->
         <div class="layout_main">
-            <p style="height: 100000px; background-color: beige;">这是内容展示区</p>
+            <Main></Main>
         </div>
     </div>
 </template>
@@ -24,6 +24,7 @@
 <script setup lang="ts">
 import Logo from './logo/index.vue'
 import Menu from './menu/index.vue'
+import Main from './main/index.vue'
 
 //获取用户相关的小仓库
 import useUserStore from '@/store/modules/user'
