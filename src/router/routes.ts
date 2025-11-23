@@ -1,5 +1,3 @@
-import { messageTypes } from 'element-plus';
-
 // 对外暴露配置路由
 export const constantRoute = [
   {
@@ -9,6 +7,7 @@ export const constantRoute = [
     meta: {
       title: '登录',
       hidden: true, // 当前路由是否在菜单中隐藏 true:隐藏 false:不隐藏
+      icon: 'Promotion',
     },
   },
   {
@@ -19,6 +18,7 @@ export const constantRoute = [
     meta: {
       title: '布局',
       hidden: false, // 当前路由是否在菜单中隐藏 true:隐藏 false:不隐藏
+      icon: 'HomeFilled',
     },
     children: [
       {
@@ -28,15 +28,7 @@ export const constantRoute = [
         meta: {
           title: '首页',
           hidden: false,
-        },
-      },
-      {
-        path: '/test',
-        component: () => import('@/views/home/index.vue'),
-        name: 'test',
-        meta: {
-          title: '测试页面',
-          hidden: true,
+          icon: 'HomeFilled',
         },
       },
     ],
@@ -49,6 +41,7 @@ export const constantRoute = [
     meta: {
       title: '404',
       hidden: true,
+      icon: 'HomeFilled',
     },
   },
   {
@@ -59,6 +52,7 @@ export const constantRoute = [
     meta: {
       title: '任意路由',
       hidden: true,
+      icon: 'HomeFilled',
     },
   },
 ];
