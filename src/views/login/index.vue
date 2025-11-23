@@ -58,13 +58,14 @@ const login = async () => {
 
     try {
         await userStore.userLogin(loginForm);
+        $router.push('/home');
         //登录成功，跳转首页
         ElNotification({
             title: `HI,${getTime()}`,
             message: '欢迎回来',
             type: 'success',
         });
-        $router.push('/');
+
         loading.value = false;
     } catch (error: any) {
         ElNotification({
@@ -100,7 +101,6 @@ const validatePassword = (rule: any, value: string, callback: any) => {
         callback();
     }
 };
-
 
 //表单校验规则
 const rules = {

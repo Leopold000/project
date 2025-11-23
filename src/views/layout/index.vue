@@ -6,18 +6,11 @@
             <!-- 展示菜单 -->
             <el-scrollbar class="scrollbar">
                 <el-menu background-color="#001529" text-color="white">
-                    <el-menu-item index="1">首页</el-menu-item>
-                    <el-menu-item index="2">数据大屏</el-menu-item>
-                    <!-- 折叠菜单 -->
-                    <el-sub-menu index="3">
-                        <template #title>商品管理</template>
-                        <el-menu-item index="3-1">商品列表</el-menu-item>
-                        <el-menu-item index="3-2">商品分类</el-menu-item>
-                    </el-sub-menu>
+                    <!-- 根据路由动态生成菜单 -->
+                    <Menu :menuList="userStore.menuRoutes"></Menu>
                 </el-menu>
             </el-scrollbar>
         </div>
-
 
         <!-- 顶部导航 -->
         <div class="layout_tabbar">3245</div>
@@ -30,6 +23,13 @@
 
 <script setup lang="ts">
 import Logo from './logo/index.vue'
+import Menu from './menu/index.vue'
+
+//获取用户相关的小仓库
+import useUserStore from '@/store/modules/user'
+const userStore = useUserStore()
+// 输出用户小仓库中的菜单路由数据
+
 </script>
 
 <style scoped lang="scss">
@@ -46,6 +46,10 @@ import Logo from './logo/index.vue'
         .scrollbar {
             width: 100%;
             height: calc(100vh - #{$base-menu-logo-height});
+
+            .el-menu {
+                border-right: none;
+            }
         }
     }
 

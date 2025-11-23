@@ -16,7 +16,7 @@ import pinia from './store';
 // 引入自定义插件对象：注册整个项目全局组件
 import globalComponents from '@/components';
 
-import router from './router';
+import router from '@/router/index.ts';
 
 const app = createApp(App);
 
